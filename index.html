@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="./CSS/reset.css">
+  <link rel="stylesheet" href="./CSS/fonts.css">
+  <link rel="stylesheet" href="./CSS/style.css">
+  <link rel="stylesheet" href="./CSS/switch.css">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Multi-step form</title>
+</head>
+<body>
+
+  <main>
+    <aside class="SideBar">
+      <!-- Sidebar start -->
+      <picture class="SideBar-Background">
+        <source srcset="./assets/images/bg-sidebar-desktop.svg" media="(min-width:1200px)">
+        <img src="./assets/images/bg-sidebar-mobile.svg" alt="">
+      </picture>
+
+      <ul class="SideBar-List">
+        <li class="SideBar-List-Element">
+          <p id="step-1" class="SideBar-List-Element-Number --active">1</p>
+          <div class="SideBar-List-Element-Info">
+            <p>Step 1</p>
+            <b>Your info</b>
+          </div>
+        </li>
+        <li  class="SideBar-List-Element">
+          <p id="step-2" class="SideBar-List-Element-Number">2</p>
+          <div class="SideBar-List-Element-Info">
+            <p>Step  2</p>
+            <b>Select plan</b>
+          </div>
+        </li>
+        <li class="SideBar-List-Element">
+          <p id="step-3" class="SideBar-List-Element-Number">3</p>
+          <div class="SideBar-List-Element-Info">
+            <p>Step 3</p>
+            <b>Add-ons</b>
+          </div>
+        </li>
+        <li class="SideBar-List-Element">
+          <p id="step-4" class="SideBar-List-Element-Number">4</p>
+          <div class="SideBar-List-Element-Info">
+            <p>Step 4</p>
+            <b>Summary</b>
+          </div>
+        </li>
+      </ul>
+      <!-- Sidebar end -->
+    </aside>
+    <form class="Form" id="form">
+      <section id="first-form" class="Form-Section ">
+        <!-- Step 1 start -->
+        <h3 class="Form-Section-Title">Personal info</h3>
+        <p class="Form-Section-Description">Please provide your name, email address, and phone number.</p>
+        <fieldset  class="Form-Section-FieldSet">
+          <div id="name-form" class="label-container"><label class="input-label" for="name">Name</label> <span class="error --is-off">This field is required</span></div>
+          <input  name="name" id="name" placeholder="e.g. Stephen King" type="text" required/>
+          <div id="email-form" class="label-container"><label class="input-label" for="email">Email Address</label><span class="error --is-off">Enter a valid email</span></div>
+          <input name="email" id="email" placeholder="stephenking@lorem.com" type="email" required/>
+          <div id="tel-form" class="label-container"><label class="input-label" for="tel">Phone Number</label><span class="error --is-off">This field is required</span></div>
+          <input name="tel" id="tel" placeholder="e.g. +1 234 567 890" type="tel" required />
+        </fieldset>
+        <!-- Step 1 end -->
+      </section>
+      <section id="second-form" class="Form-Section --is-off">
+        <!-- Step 2 start -->
+        <h3 class="Form-Section-Title">Select your plan</h3>
+        <p class="Form-Section-Description">You have the option of monthly or yearly billing.</p>
+        <fieldset class="Form-Section-FieldSet">
+          <div class="Form-Section-FieldSet-Radio">
+            <div id="arcade-container" class="Form-Section-FieldSet-Radio-Elm --selected">
+              <img src="./assets/images/icon-arcade.svg" alt="Arcade Icon">
+              <div>
+                <input type="radio" name="subscription" id="arcade" value="arcade" data-checked="true" checked/>
+                <label for="arcade">
+                  Arcade
+                </label>
+                <p id="arcade-value">$9/mo</p>
+              </div>
+            </div>
+            <div id="advanced-container" class="Form-Section-FieldSet-Radio-Elm">
+              <img src="./assets/images/icon-advanced.svg" alt="Advanced Icon">
+              <div>
+                <input type="radio" name="subscription" id="advanced" value="advanced" data-checked="false"/>
+                <label for="advanced">
+                  Advanced
+                </label>
+                <p id="advanced-value">$12/mo</p>
+              </div>
+            </div>
+            <div id="pro-container" class="Form-Section-FieldSet-Radio-Elm">
+              <img src="./assets/images/icon-pro.svg" alt="Pro Icon">
+              <div>
+                <input type="radio" name="subscription" id="pro" value="pro" data-checked="false"/>
+                <label for="pro">
+                  Pro
+                </label>
+                <p id="pro-value">$15/mo</p>
+              </div>
+            </div>
+          </div>
+            <div class="time-container">
+              <label class="--is-blue" for="time" id="month">Monthly</label>
+              <label class="switch">
+                <input type="checkbox" name="time" id="time">
+                <span class="slider"></span>
+              </label>
+              <label for="time" id="year">Yearly</label>
+            </div>
+          </fieldset>
+        <!-- Step 2 end -->
+      </section>
+      <section id="third-form" class="Form-Section --is-off">
+        <!-- Step 3 start -->
+        <h3 class="Form-Section-Title">Pick add-ons</h3>
+        <p class="Form-Section-Description">Add-ons help enhance your gaming experience.</p>
+      <fieldset class="Form-Section-FieldSet">
+        <div id="online-container" class="Form-Section-FieldSet-Checkbox">
+
+              <input type="checkbox" name="online" id="online"/>
+              <div class="checked">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+              </div>
+          
+     
+            <div class="Checkbox-Info">
+              <label for="online" id="online-des">Online service</label>
+              <p>Access to multiplayer games</p>
+            </div>
+            <p id="online-value" class="price">+$1/mo</p>
+         
+        </div>
+        <div id="storage-container" class="Form-Section-FieldSet-Checkbox">
+          
+              <input type="checkbox" name="storage" id="storage"/>
+              <div class="checked">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+              </div>
+            
+              <div class="Checkbox-Info">
+                <label for="storage" id="storage-des">Larger storage</label>
+                <p>Extra 1TB of cloud save</p>
+              </div>
+              <p id="storage-value" class="price">+$2/mo</p>
+            
+        </div>
+          <div id="profile-container" class="Form-Section-FieldSet-Checkbox">
+            
+                <input type="checkbox" name="profile" id="profile"/>
+                <div class="checked">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                </div>
+              <div class="Checkbox-Info">
+                <label for="profile" id="profile-des">Customizable Profile</label>
+                <p>Custom theme on your profile</p>
+              </div> 
+              <p id="profile-value" class="price">+$2/mo</p>
+            
+          </div>
+      </fieldset>
+        
+        <!-- Step 3 end -->
+      </section>
+      <section id="fourth-form" class="Form-Section --is-off">
+        <!-- Step 4 start -->
+        <h3 class="Form-Section-Title">Finishing up</h3>
+        <p class="Form-Section-Description">Double-check everything looks OK before confirming.</p>
+        <!-- Dynamically add subscription and add-on selections here -->
+        <section class="Form-Section-Table">
+          <header class="Form-Section-Table-Header">
+            <div class="Form-Section-Table-Row">
+              <div ><p class="header-name" id="sub-col">Arcade(Monthly)</p><button class="change" id="change">Change</button></div>
+              <p id="sub-price-col" class="header-price">$9/mo</p>
+            </div>
+          </header>
+          <div id="tab-body"  class="Form-Section-Table-Body">
+            <div class="Form-Section-Table-Row">
+              <p>Online service</p>
+              <p class="body-price">+$1/mo</p>
+            </div>
+            <div class="Form-Section-Table-Row">
+              <p>Online service</p>
+              <p class="body-price">+$1/mo</p>
+            </div>
+          </div>
+          <footer class="Form-Section-Table-Footer">
+            
+              <p id="total-par">Total(per month)</p>
+              <p id="total-col" class="footer-price"> +$12/mo</p>
+            
+          </footer>
+        </section>
+        
+      </section>
+      <div id="button-container" class="Form-Button --end">
+        <button type="button" id="prev" class="button grey --is-off">Go Back</button>
+        <button type="button" id="next" class="button blue ">Next Step</button>
+        <button type="submit" id="confirm" class="button blue --is-off">Confirm</button>
+      </div>
+    </form>
+    <!-- Step 4 end -->
+    <!-- Step 5 start -->
+    <section id="final-form" class="Final-Section --is-off">
+      <img src="./assets/images/icon-thank-you.svg" alt="Icon with checkmark">
+      <h3 class="Form-Section-Title">Thank you!</h3>
+      <p>
+        Thanks for confirming your subscription! We hope you have fun
+        using our platform. If you ever need support, please feel free
+        to email us at support@loremgaming.com.
+      </p>
+    </section>
+    <!-- Step 5 end -->
+    
+  </main>
+  <footer class="attribution">
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.frontendmentor.io/profile/LeoDurillon">Leo Durillon</a>.</p>
+  </footer>
+  <script src="./JS/app.js"></script>
+</body>
+</html>
